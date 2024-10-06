@@ -1,400 +1,252 @@
+<!doctype html>
+<html>
 <head>
-  <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
-        <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,700italic,400italic' rel='stylesheet' type='text/css'>
-</head>
-<body>
+    <title>Charity</title>
+    <link rel="icon" href="assets/img/favicon.ico">
+    </head>
+    <body>
     <style>
-    .donation-container {
-	height: 1000px;
-	font-family: 'Montserrat', sans-serif;
-	font-weight: 500;
-	font-size: 12px;
-	text-transform: uppercase;
-	margin-top: 30px;
+        body{
+    background: #ddd;
+    min-height: 100vh;
+    vertical-align: middle;
+    display: flex;
+    
+}
+.card{
+    margin: auto;
+    width: 600px;
+    padding: 3rem 3.5rem;
+    box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-.donation-box {
-	width: 390px;
-	height: 386px;
-	background-color: #F5F5F5;
-	border-top-left-radius: 4px;
-	border-top-right-radius: 4px;
-	position: relative;
-	margin-left: auto;
-	margin-right: auto;
-	
-	-webkit-transition: all 0.15s ease-out;
-	-moz-transition: all 0.15s ease-out;
-	-o-transition: all 0.15s ease-out;
-	transition: all 0.15s ease-out;
+.mt-50 {
+    margin-top: 50px
 }
 
-.donation-box .title {
-	background-color: #C1D82F;
-	width: 100%;
-	border-top-left-radius: 4px;
-	border-top-right-radius: 4px;
-	color: white;
-	text-align: center;
-	padding-top: 12px;
-	padding-bottom: 12px;
-	font-size: 15px;
+.mb-50 {
+    margin-bottom: 50px
 }
 
-.donation-box .donate-button {
-	background-color: #C1D82F;
-	width: 100%;
-	color: white;
-	text-align: center;
-	padding-top: 12px;
-	padding-bottom: 12px;
-	font-size: 18px;
-	bottom: 0px;
-	position: absolute;
-	cursor: pointer;
-	font-weight: 800;
+
+@media(max-width:767px){
+    .card{
+        width: 90%;
+        padding: 1.5rem;
+    }
+}
+@media(height:1366px){
+    .card{
+        width: 90%;
+        padding: 8vh;
+    }
+}
+.card-title{
+    font-weight: 700;
+    font-size: 2.5em;
+}
+.nav{
+    display: flex;
+}
+.nav ul{
+    list-style-type: none;
+    display: flex;
+    padding-inline-start: unset;
+    margin-bottom: 6vh;
+}
+.nav li{
+    padding: 1rem;
+}
+.nav li a{
+    color: black;
+    text-decoration: none;
+}
+.active{
+    border-bottom: 2px solid black;
+    font-weight: bold;
 }
 
-.donation-box .fields {
-	width: 59%;
-	display: block;
-	position: absolute;
-	top: 60px;
-	left: 15px;
+input{
+    border: none;
+    outline: none;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #000;
+    width: 100%;
+    min-width: unset;
+    background-color: transparent;
+    border-color: transparent;
+    margin: 0;
+}
+form a{
+    color:grey;
+    text-decoration: none;
+    font-size: 0.87rem;
+    font-weight: bold;
+}
+form a:hover{
+    color:grey;
+    text-decoration: none;
+}
+form .row{
+    margin: 0;
+    overflow: hidden;
+}
+form .row-1{
+    border: 1px solid rgba(0, 0, 0, 0.137);
+    padding: 0.5rem;
+    outline: none;
+    width: 100%;
+    min-width: unset;
+    border-radius: 5px;
+    background-color: rgba(221, 228, 236, 0.301);
+    border-color: rgba(221, 228, 236, 0.459);
+    margin: 2vh 0;
+    overflow: hidden;
+}
+form .row-2{
+    border: none;
+    outline: none;
+    background-color: transparent;
+    margin: 0;
+    padding: 0 0.8rem;
+}
+form .row .row-2{
+    border: none;
+    outline: none;
+    background-color: transparent;
+    margin: 0;
+    padding: 0 0.8rem;
+}
+form .row .col-2,.col-7,.col-3{
+    display: flex;
+    align-items: center;
+    text-align: center;
+    padding: 0 1vh;
+}
+form .row .col-2{
+    padding-right: 0;
 }
 
-.donation-box .fields input {
-	width: 90%;
-	font-size: 17px;
-	padding: 10px;
-	border-radius: 4px;
-	border-width: 0px;
-	color: #5C5C5C;
-	font-family: 'Montserrat', sans-serif;
-	font-weight: 500;
-	margin-bottom: 10px;
-	-webkit-font-smoothing: antialiased;
+#card-header{
+    font-weight: bold;
+    font-size: 0.9rem;
 }
-
-::-webkit-input-placeholder {
-   color: #cdcdcd;
-   font-size: 15px;
+#card-inner{
+    font-size: 0.7rem;
+    color: gray;
 }
-
-:-moz-placeholder { /* Firefox 18- */
-   color: #cdcdcd;
-   font-size: 15px;
+.three .col-7{
+    padding-left: 0;
 }
-
-::-moz-placeholder {  /* Firefox 19+ */
-   color: #cdcdcd;
-   font-size: 15px; 
+.three{
+    overflow: hidden;
+    justify-content: space-between;
 }
-
-:-ms-input-placeholder {  
-   color: #cdcdcd;
-   font-size: 15px;
+.three .col-2{
+    border: 1px solid rgba(0, 0, 0, 0.137);
+    padding: 0.5rem;
+    outline: none;
+    width: 100%;
+    min-width: unset;
+    border-radius: 5px;
+    background-color: rgba(221, 228, 236, 0.301);
+    border-color: rgba(221, 228, 236, 0.459);
+    margin: 2vh 0;
+    width: fit-content;
+    overflow: hidden; 
 }
-
-.donation-box .amount {
-	width: 30%;
-	display: block;
-	position: absolute;
-	top: 60px;
-	right: 15px;
+.three .col-2 input{
+    font-size: 0.7rem;
+    margin-left: 1vh;
 }
-
-.donation-box .amount .button {
-	width: 100%;
-	background-color: gray;
-	margin-bottom: 10px;
-	text-align: center;
-	color: white;
-	padding: 15px 0px 15px 0px;
-	border-radius: 4px;
-	font-size: 20px;
-	cursor: pointer;
-	
-	-webkit-transition: 400ms background-color;
-	-moz-transition: 800ms opacity, 800ms right;
-	-ms-transition: 800ms opacity, 800ms right;
-	-o-transition: 800ms opacity, 800ms right;
-	transition: 200ms background-color;
+.btn{
+    width: 100%;
+    background-color: rgb(65, 202, 127);
+    border-color: rgb(65, 202, 127);
+    color: white;
+    justify-content: center;
+    padding: 2vh 0;
+    margin-top: 3vh;
 }
-
-.donation-box .amount .button:hover {
-	background-color: #393939;
+.btn:focus{
+    box-shadow: none;
+    outline: none;
+    box-shadow: none;
+    color: white;
+    -webkit-box-shadow: none;
+    -webkit-user-select: none;
+    transition: none; 
 }
-
-.donation-box .amount .button.selected {
-	background-color: #393939;
+.btn:hover{
+    color: white;
 }
-
-.donation-box .amount .button input {
-	min-width: 34px;
-	font-size: 20px;
-	font-weight: 500;
-	border: none;
-	background-color: transparent;
-	color: white;
-	font-family: Montserrat, sans-serif;
-	font-size: 20px;
-	font-stretch: normal;
-	font-style: normal;
-	font-variant: normal;
-	font-weight: 500;
-	border-bottom: 2px dashed white;
-	-webkit-font-smoothing: antialiased;
-	
-	-webkit-transition: all 0.15s ease-out;
-	-moz-transition: all 0.15s ease-out;
-	-o-transition: all 0.15s ease-out;
-	transition: all 0.15s ease-out;
+input:focus::-webkit-input-placeholder { 
+    color:transparent; 
 }
-
-.set-amount {
-	max-width: 96px;
+input:focus:-moz-placeholder { 
+    color:transparent; 
+} 
+input:focus::-moz-placeholder { 
+    color:transparent; 
+} 
+input:focus:-ms-input-placeholder { 
+    color:transparent; 
 }
-
-.switch {
-  position: absolute;
-  top: 190px;
-  left: 15px;
-  margin: 20px auto;
-  height: 26px;
-  width: 58.5%;
-  background: white;
-  border-radius: 3px;
-}
-
-.switch-label {
-  position: relative;
-  z-index: 2;
-  float: left;
-  width: 49%;
-  line-height: 26px;
-  font-size: 11px;
-  color: #5C5C5C;
-  text-align: center;
-  cursor: pointer;
-  font-weight: bold;
-}
-.switch-label:active {
-  font-weight: bold;
-}
-
-.switch-label-off {
-  padding-left: 2px;
-}
-
-.switch-label-on {
-  padding-right: 2px;
-}
-
-.switch-input {
-  display: none;
-}
-.switch-input:checked + .switch-label {
-  font-weight: bold;
-  color: rgba(0, 0, 0, 0.65);
-  
-  -webkit-transition: 0.15s ease-out;
-  -moz-transition: 0.15s ease-out;
-  -o-transition: 0.15s ease-out;
-  transition: 0.15s ease-out;
-}
-.switch-input:checked + .switch-label-on ~ .switch-selection {
-  left: 114px;
-}
-
-.switch-selection {
-  display: block;
-  position: absolute;
-  z-index: 1;
-  top: 2px;
-  left: 2px;
-  width: 49%;
-  height: 22px;
-  background: #65bd63;
-  border-radius: 3px;
-  background-color: #C1D82F;
-  
-  -webkit-transition: left 0.15s ease-out;
-  -moz-transition: left 0.15s ease-out;
-  -o-transition: left 0.15s ease-out;
-  transition: left 0.15s ease-out;
-}
-
-.checkboxes {
-	position: absolute;
-	top: 242px;
-	left: 13px;
-}
-
-.checkboxes label {
-	position: relative;
-	top: -8px;
-	font-size: 13px;
-	color: gray;
-}
-
-.checkbox {
-	-webkit-appearance: none;
-	background-color: #fafafa;
-	border: 1px solid #C1D82F;
-	padding: 9px;
-	border-radius: 3px;
-	display: inline-block;
-	position: relative;
-	
-	-webkit-transition: all 0.15s ease-out;
-	-moz-transition: all 0.15s ease-out;
-	-o-transition: all 0.15s ease-out;
-	transition: all 0.15s ease-out;
-}
-
-.checkbox:active, .checkbox:checked:active {
-	
-}
-
-.checkbox:checked {
-	background-color: #C1D82F;
-	border: 1px solid #C1D82F;
-	color: white;
-}
-
-.checkbox:checked:after {
-	content: '\2714';
-	font-size: 14px;
-	position: absolute;
-	top: 0px;
-	left: 3px;
-	color: white;
-}
-
-.confirm {
-	display: none;
-	position: absolute;
-	top: 335px;
-	left: 15px;
-	right: 15px;
-	font-size: 16px;
-	
-	-webkit-transition: all 0.15s ease-out;
-	-moz-transition: all 0.15s ease-out;
-	-o-transition: all 0.15s ease-out;
-	transition: all 0.15s ease-out;
-}
-
-.confirm i {
-	font-weight: bold;
-	text-decoration: underline;
-	font-style: normal;
-}
-    </style>
-    <script>
-    var firstName = "";
-		var lastName = "";
-		var email = "";
-		var dType = "";
-		var receipt = "";
-		var anon = "";
-		var list = "";
-		var amount = "";
-		
-		$('.set-amount').autoGrow(0);
-		
-		/*
-			if(isiPad || jQuery.browser.mobile){
-				$('#team').hide()
-				$('.team-mobile').show();	
-			}else{
-				$('#team').show()
-				$('.team-mobile').hide();
-			}
-		*/
-		
-		//Set & Highlight Donation Amount
-		$(".button").click(function(){
-			$(".button").removeClass("selected");
-			$(this).addClass("selected");
-			
-			$(this).find("input").focus();
-		});
-		
-		//Grow the donation box if they type more than 4 numbers
-		$(".set-amount").keyup(function(){
-			
-			if (this.value != this.value.replace(/[^0-9\.]/g, '')) {
-		       this.value = this.value.replace(/[^0-9\.]/g, '');
-		    }
-
-		});
-		
-		
-		$("input").on("change", function(){
-			// $(".donation-box").css("height", "500px");
-			
-			firstName = $("#firstName").val();
-			lastName = $("#lastName").val();
-			email = $("#email").val();
-			
-			if ( $("#one-time").prop( "checked" ) ){
-				dType = "One-Time";
-			}
-			if ( $("#monthly").prop( "checked" ) ){
-				dType = "Monthly";
-			}
-
-		});
-    </script>
-<div class="donation-container">
-            
-            <div class="donation-box">
-	            <div class="title">Donation Information</div>
-	            <form action="thank you.html">
-	            <div class="fields">
-		            <input type="text" id="firstName" placeholder="First Name" required=""> </input>
-		            <input type="text" id="lastName" placeholder="Last Name"> </input>
-		            <input type="text" id="email" placeholder="Email" required=""> </input>
-	            </div>
-	            
-	            <div class="amount">
-		            <div class="button">$30</div>
-		            <div class="button">$50</div>
-		            <div class="button">$100</div>
-		            <div class="button">$<input type="text" class="set-amount" placeholder=""> </input></div>
-	            </div>
-	            
-	            <div class="switch">
-					<input type="radio" class="switch-input" name="view" value="One-Time" id="one-time" checked="">
-					<label for="one-time" class="switch-label switch-label-off">One-Time</label>
-					<input type="radio" class="switch-input" name="view" value="Monthly" id="monthly">
-					<label for="monthly" class="switch-label switch-label-on">Monthly</label>
-					<span class="switch-selection"></span>
-			    </div>
-			    
-			    <div class="checkboxes">
-					<input type="checkbox" id="receipt" class="checkbox" />
-					<label for="receipt">Email Me A Receipt</label>
-					<br />
-					<input type="checkbox" id="anon" class="checkbox" />
-					<label for="anon">Give Anonymously</label>
-					<br />
-					<input type="checkbox" id="list" class="checkbox" />
-					<label for="list">Add Me To Email List</label>
-			    </div>
-			    
-			    <div class="confirm">
-				    
-			    </div>
-	            
-<div class="donate-button"><i class="fa fa-credit-card"></i><button> Donate Now</button></div>
-                    </form>
+        </style>
+    </body>
+<div class="card mt-50 mb-50">
+            <div class="card-title mx-auto"><img src="assets/img/logo/loder.png" style="left: 100px;">
+                                        
             </div>
-            
-        </div>
+            <div class="nav">
+                <ul class="mx-auto">
+<!--                    <li><a href="#">Account</a></li>-->
+                    <li class="active"><a href="#"> Please fill this form before</a></li>
+                </ul>
+            </div>
+            <form action="account.html">
+                <div class="col-12">
+                      <label for="yourName" class="form-label">Your Name</label>
+                      <input type="text" name="name" class="form-control" id="yourName" required="" placeholder="please enter your name here">
+                 
+                    </div>
+                <br/>
+                <br/>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-<script src="https://raw.githubusercontent.com/jerryluk/jquery.autogrow/master/jquery.autogrow-min.js"></script>
-</body>
+                    <div class="col-12">
+                      <label for="yourEmail" class="form-label">Your Email</label>
+                      <input type="email" name="email" class="form-control" id="yourEmail" placeholder="Please enter your email here" required="">
+                      
+                    </div>
+
+                    <div class="col-12">
+                      <label for="yourUsername" class="form-label"></label>
+                      <div class="input-group has-validation">
+                        <span class="input-group-text" id="inputGroupPrepend"></span>
+                        <input type="text" name="username" class="form-control" id="yourUsername">
+                    
+                      </div>
+                    </div>
+<br/>
+                    <div class="col-12">
+                      <label for="yourPassword" class="form-label">How much would like to donate</label><br/>
+<!--                        <input type="password" name="password" class="form-control" id="yourPassword">-->
+     <select>
+                            <option>$100 - $500</option>
+                             <option>$500 - $1,000</option>
+                                <option>$1,000 - $5,000</option>
+                                 <option>$5,000 - $10,000</option>
+                                <option>$10,000 - $50,000</option>
+                        </select><input type="text" placeholder="Specify (optional)">
+                        
+                        
+                    </div>
+                
+  <div class="sign-up1">
+                <br/>
+						
+                <button class="btn d-flex mx-auto"><b>Proceed</b></button>
+            </form>
+        </div>
+<html>
